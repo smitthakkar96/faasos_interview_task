@@ -4,6 +4,7 @@ disco==0.5.4
 Flask==0.12
 flask-reqparse==2.2.1
 Flask-Testing==0.6.2
+gunicorn==19.7.1
 itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==1.0
