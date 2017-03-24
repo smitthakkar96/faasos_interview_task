@@ -1,0 +1,93 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+<!--Jquery-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+<style>
+    nav {
+        background-color: #03A9F4
+    }
+    
+    .upload-wrapper {
+        color: black
+    }
+    
+    .upload-wrapper {
+        position: absolute;
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+    
+    .table-wrapper {
+        margin-top: 300px
+    }
+</style>
+
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Faasos Interview Task</a>
+
+        </div>
+    </nav>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m4 l4 upload-wrapper">
+            <div class="card-panel">
+                <!-- Card Content -->
+                <h5>
+                    Upload Log File
+                </h5>
+                <form action="/process_log" method='POST' enctype="multipart/form-data">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Select File</span>
+                            <input type="file" name="log_file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="col-input-field">
+                        <button class="btn" type="submit">Process Logs</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th> ip_address </th>
+                    <th> HTTP_METHOD </th>
+                    <th> ORIGIN_HEADER </th>
+                    <th> is_suspicious </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for log in data %}
+                <tr>
+                    <td>{{ log.ip_address }}</td>
+                    <td>{{ log.HTTP_METHOD }}</td>
+                    <td>{{ log.ORIGIN_HEADER }}</td>
+                    <td>{{ log.is_suspicious }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
