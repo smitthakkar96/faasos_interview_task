@@ -17,3 +17,7 @@ Near-Real Time Threat Detection
 - clone the repo
 - Install the dependencies ``` pip install -r requirements.txt ```
 - Run the app :) ``` python app.py ```
+
+### Running Tests
+- Make sure the project is perfectly setup
+- Run ``` python tests.py ```
