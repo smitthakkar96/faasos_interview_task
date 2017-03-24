@@ -18,6 +18,9 @@ def is_indian_ip(ip_address):
     """
         Checks if the ip address that sent the request is a non-indian ip
     """
-    reader = geolite2.reader()
-    match = reader.get(ip_address)
-    return match['country']['iso_code'] == 'IN'
+    try:
+        reader = geolite2.reader()
+        match = reader.get(ip_address)
+        return match['country']['iso_code'] == 'IN'
+    except:
+        return False
