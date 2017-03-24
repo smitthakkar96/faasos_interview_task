@@ -58,7 +58,7 @@ def process_log(args):
                 is_suspicious = True
                 break
         if not is_suspicious:
-            if is_indian_ip(ip_address):
+            if not is_indian_ip(ip_address):
                 is_suspicious = True
         response.append({
             'ip_address': ip_address,
