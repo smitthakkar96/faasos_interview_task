@@ -1,7 +1,6 @@
 """
     starting point of application
 """
-
 # I have never used Jinja2 in my life I usually build apis In python
 # but since it was a small task I didn't prefer to write angular2 app in frontend
 # Due to this the Ui as well as the UX of the app won't be cool
